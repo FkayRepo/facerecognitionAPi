@@ -26,12 +26,7 @@ app.use(cors());
 
 app.get('/', (req,res) => {
 
-	db('users')
-	.returning('*')
-	.then(users => {
-		res.json(users)
-	})
-	.catch(res.status(400).json('connection failed'))
+	res.send('it is working!')
 })
 
 app.post('/signin', (req,res) => { signin.handleSigninPost(req,res,db,bcrypt) });
