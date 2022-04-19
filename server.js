@@ -31,6 +31,7 @@ app.get('/', (req,res) => {
 	.then(users => {
 		res.json(users)
 	})
+	.catch(res.status(400).json('connection failed'))
 })
 
 app.post('/signin', (req,res) => { signin.handleSigninPost(req,res,db,bcrypt) });
