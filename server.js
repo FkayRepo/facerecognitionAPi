@@ -43,7 +43,7 @@ app.put('/image', (req,res) => { image.handleImagePut(req,res,db) });
 
 app.post('/imageURL', (req,res) => { imageURL.handleImageURLPost(req,res,axios) });
 
-app.listen(3000, () => {
+app.listen(process.env.PORT || 3000, () => {
 	
-	console.log('app running on port 3000');
+	console.log(`app running on port ${process.env.PORT}`);
 })
